@@ -1,0 +1,9 @@
+[Unit]
+Description=cron
+
+[Service]
+Type=forking
+ExecStart=/{PATH_TO_CRON}/cron
+
+[Install]
+WantedBy=multi-user.target
