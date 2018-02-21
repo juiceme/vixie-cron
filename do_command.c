@@ -207,7 +207,7 @@ child_process(e, u)
 		 * we set uid, we've lost root privledges.
 		 */
 		setgid(e->gid);
-# if defined(BSD)
+# if defined(BSD) || defined(POSIX)
 		initgroups(env_get("LOGNAME", e->envp), e->gid);
 # endif
 		setuid(e->uid);		/* we aren't root after this... */
