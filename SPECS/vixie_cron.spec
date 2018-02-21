@@ -1,16 +1,16 @@
 Name:          vixie-cron
-Version:       3.0pl1
-Release:       1
-Summary:       First take at creating a RPM package :)
+Version:       3.0pl2
+Release:       2
+Summary:       vixie-cron for SFOS
 Group:         System/Tools
-Vendor:        Paul Vixie / zeamoceq
+Vendor:        Paul Vixie / zeamoceq / juiceme
 Distribution:  SailfisfOS
 Packager:      juiceme <juice@swagman.org>
-URL:           www.dhrider.co.cc
+URL:           https://github.com/juiceme/vixie-cron.git
 
 License:       BSD
 
-Source:        vixie-cron-3.0pl1.tar
+Source:        vixie-cron-3.0pl2.tar
 
 Buildroot:    /home/nemo/rpmbuild/BUILDROOT/
 
@@ -36,6 +36,7 @@ install -c -D -m  644    $RPM_BUILD_DIR/%{name}-%{version}/cron.service $RPM_BUI
 install -c -D -m  755    $RPM_BUILD_DIR/%{name}-%{version}/crontab.1    $RPM_BUILD_ROOT/usr/share/man/man1/crontab.1
 install -c -D -m  755    $RPM_BUILD_DIR/%{name}-%{version}/cron.8       $RPM_BUILD_ROOT/usr/share/man/man8/cron.8
 install -c -D -m  755    $RPM_BUILD_DIR/%{name}-%{version}/crontab.5    $RPM_BUILD_ROOT/usr/share/man/man5/crontab.5
+ln -sf /bin/vi $RPM_BUILD_ROOT/usr/bin/vi
 
 %clean
 rm -rf $RPM_BUILD_ROOT
