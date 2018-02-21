@@ -17,6 +17,8 @@ Buildroot:    /home/nemo/rpmbuild/BUILDROOT/
 %description
 vixie-crond adaptation to SailfishOS platform
 
+%define _unpackaged_files_terminate_build 0
+
 %prep
 %setup -q
 
